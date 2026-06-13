@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         }, observerOptions);
 
-        const statsSection = document.querySelector(".bg-primary, .stats-trigger");
+        const statsSection = document.querySelector(".stats-trigger");
         if (statsSection) {
             observer.observe(statsSection);
         } else {
