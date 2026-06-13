@@ -1,0 +1,139 @@
+/* ============================================================
+   Al Rasheed Hospital — Custom Styles
+   ============================================================ */
+
+/* Material Symbols */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+}
+
+/* ── Medical shadow utility ── */
+.medical-shadow {
+    box-shadow: 0 4px 20px rgba(13, 33, 55, 0.08), 0 1px 4px rgba(13, 33, 55, 0.04);
+}
+.medical-shadow-lg {
+    box-shadow: 0 12px 40px rgba(13, 33, 55, 0.12), 0 4px 12px rgba(13, 33, 55, 0.06);
+}
+
+/* ── Scrollbar hide ── */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+
+/* ── Hero slider fade ── */
+.hero-slide { opacity: 0; }
+.fade-slide-active { opacity: 1 !important; }
+
+/* ── Slider dot active state ── */
+.slider-dot-active {
+    width: 2rem !important;
+    opacity: 1 !important;
+}
+
+/* ── Counter animation ── */
+@keyframes count-up {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.counter-animate {
+    animation: count-up 0.6s ease forwards;
+}
+
+/* ── Fade in up ── */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.fade-in-up { animation: fadeInUp 0.75s ease forwards; }
+.animate-fade-in { animation: fadeInUp 0.5s ease forwards; }
+
+/* ── Float badge ── */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-8px); }
+}
+.float-badge { animation: float 3.2s ease-in-out infinite; }
+
+/* ── Pulse ring (emergency badge) ── */
+@keyframes pulse-ring {
+    0%   { transform: scale(0.9); opacity: 1; }
+    100% { transform: scale(1.6); opacity: 0; }
+}
+.pulse-ring { position: relative; }
+.pulse-ring::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: rgba(255,255,255,0.6);
+    animation: pulse-ring 1.8s ease-out infinite;
+}
+
+/* ── Glass card ── */
+.glass-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+}
+
+/* ── Image zoom ── */
+.img-zoom { overflow: hidden; }
+.img-zoom img { transition: transform 0.55s cubic-bezier(0.4,0,0.2,1); }
+.img-zoom:hover img { transform: scale(1.06); }
+
+/* ── Gradient text ── */
+.gradient-text {
+    background: linear-gradient(135deg, #af101a 0%, #00897B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ── Section active indicator ── */
+.nav-active { color: #af101a !important; }
+
+/* ── Leader tab panels ── */
+.leader-tab-content { display: none; }
+.leader-tab-content.active, .leader-tab-content:not(.hidden) { display: flex; }
+
+/* ── Accordion ── */
+.accordion-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+.accordion-body.open {
+    max-height: 500px;
+}
+
+/* ── Page hero banner breadcrumb spacing ── */
+.page-hero-section {
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+}
+
+/* ── Responsive: reduce hero on mobile ── */
+@media (max-width: 768px) {
+    #hero-section { height: 480px !important; }
+    .float-badge { display: none; }
+}
+
+/* ── Sticky header shrink on scroll (JS controlled) ── */
+header.scrolled nav {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+header.scrolled img.h-11 {
+    height: 2.25rem;
+    width: 2.25rem;
+}
+
+/* ── Print styles ── */
+@media print {
+    header, footer, .no-print { display: none !important; }
+}
