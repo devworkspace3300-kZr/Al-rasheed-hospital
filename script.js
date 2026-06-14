@@ -41,18 +41,22 @@ document.addEventListener("DOMContentLoaded", () => {
     let slideInterval;
 
     if (slides.length > 0) {
+        function setDotState(index) {
+            dots.forEach((dot, i) => {
+                const isActive = i === index;
+                dot.classList.toggle("w-8", isActive);
+                dot.classList.toggle("h-2.5", isActive);
+                dot.classList.toggle("w-2.5", !isActive);
+                dot.classList.toggle("bg-opacity-100", isActive);
+                dot.classList.toggle("bg-opacity-40", !isActive);
+                dot.setAttribute("aria-selected", isActive ? "true" : "false");
+            });
+        }
+
         function showSlide(index) {
             slides.forEach(s => s.classList.remove("fade-slide-active"));
-            dots.forEach(d => {
-                d.classList.remove("bg-opacity-100", "w-8");
-                d.classList.add("bg-opacity-40", "w-3");
-            });
-
             slides[index].classList.add("fade-slide-active");
-            if (dots[index]) {
-                dots[index].classList.remove("bg-opacity-40", "w-3");
-                dots[index].classList.add("bg-opacity-100", "w-8");
-            }
+            setDotState(index);
         }
 
         function nextSlide() {
@@ -77,29 +81,36 @@ document.addEventListener("DOMContentLoaded", () => {
             startSlideTimer();
         }
 
+        showSlide(0);
         startSlideTimer();
     }
 
     // 4. Counter Animation Logic
     const counters = document.querySelectorAll(".counter");
     if (counters.length > 0) {
-        const speed = 120; // Lower is faster
+        const speed = 120;
+        let countersAnimated = false;
 
         const animateCounters = () => {
+            if (countersAnimated) return;
+            countersAnimated = true;
+
             counters.forEach(counter => {
                 const target = +counter.getAttribute("data-target");
                 if (isNaN(target)) return;
 
+                counter.classList.add("counter-animate");
+
                 const updateCount = () => {
                     const count = +counter.innerText.replace(/,/g, "").replace(/\+/g, "");
-                    const inc = target / speed;
+                    const inc = Math.max(target / speed, 1);
 
                     if (count < target) {
-                        const nextVal = Math.ceil(count + inc);
-                        if (nextVal >= target) {
-                            counter.innerText = target.toLocaleString() + "+";
-                        } else {
-                            counter.innerText = nextVal.toLocaleString();
+                        const nextVal = Math.min(Math.ceil(count + inc), target);
+                        counter.innerText = nextVal >= target
+                            ? target.toLocaleString() + "+"
+                            : nextVal.toLocaleString();
+                        if (nextVal < target) {
                             setTimeout(updateCount, 15);
                         }
                     } else {
@@ -110,9 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         };
 
-        const observerOptions = {
-            threshold: 0.2
-        };
+        const observerOptions = { threshold: 0.15, rootMargin: "0px 0px -40px 0px" };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -126,8 +135,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const statsSection = document.querySelector(".stats-trigger");
         if (statsSection) {
             observer.observe(statsSection);
+            if (statsSection.getBoundingClientRect().top < window.innerHeight) {
+                animateCounters();
+            }
         } else {
-            // Fallback: Trigger after 500ms
             setTimeout(animateCounters, 500);
         }
     }

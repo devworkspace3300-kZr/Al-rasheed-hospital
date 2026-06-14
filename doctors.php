@@ -1,163 +1,11 @@
-﻿<!DOCTYPE html>
-<html class="scroll-smooth" lang="en">
-<head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <meta name="description" content="Panel of Consultants at Al Rasheed Hospital & Kidney Center, Abbottabad - Profiles of our specialist urologists, nephrologists, gynecologists, surgeons, and physicians."/>
-    <title>Panel of Consultants | Al Rasheed Hospital & Kidney Center</title>
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    
-    <!-- Google Fonts & Material Symbols -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    
-    <!-- Custom CSS File -->
-    <link rel="stylesheet" href="custom.css"/>
-    
-    <!-- Tailwind Theme Config -->
-    <script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              colors: {
-                "primary": "#af101a", // Crescent Red
-                "primary-hover": "#8f0d15",
-                "clinical-teal": "#00897B", // Clinical Teal
-                "vitality-green": "#2E7D32", // Hands Green
-                "navy": "#0D2137", // Main header/footer navy
-                "navy-light": "#193754",
-                "surface-gray": "#F5F7FA",
-                "background": "#f8f9ff",
-                "on-surface": "#081c32",
-                "on-surface-variant": "#4A5568",
-                "pure-white": "#FFFFFF"
-              },
-              fontFamily: {
-                sans: ["Inter", "sans-serif"],
-                heading: ["Poppins", "sans-serif"],
-                display: ["Plus Jakarta Sans", "sans-serif"]
-              }
-            }
-          }
-        }
-    </script>
-</head>
-<body class="bg-background text-on-surface font-sans overflow-x-hidden">
-
-<!-- 1. TOPBAR -->
-<div class="bg-navy text-pure-white text-sm py-2.5 px-4 md:px-8 border-b border-white/10 hidden sm:block">
-    <div class="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
-        <div class="flex flex-wrap items-center gap-4 lg:gap-6">
-            <a href="tel:0992406982" class="flex items-center gap-1.5 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-sm text-primary">call</span>
-                <span>0992-406982 / 83</span>
-            </a>
-            <a href="tel:03177338830" class="flex items-center gap-1.5 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-sm text-primary">phone_iphone</span>
-                <span>0317-7338830</span>
-            </a>
-            <a href="mailto:rashidhospi@gmail.com" class="flex items-center gap-1.5 hover:text-primary transition-colors">
-                <span class="material-symbols-outlined text-sm text-primary">mail</span>
-                <span>rashidhospi@gmail.com</span>
-            </a>
-        </div>
-        <div class="flex items-center gap-4">
-            <span class="text-xs text-slate-400 border-r border-white/20 pr-4">HCCR License: 01-001353/26</span>
-        </div>
-    </div>
-</div>
-
-<!-- 2. NAVBAR -->
-<header class="sticky top-0 w-full z-50 shadow-[0_2px_16px_rgba(13,33,55,0.08)] bg-pure-white transition-all duration-300">
-    <nav class="flex justify-between items-center w-full px-4 lg:px-6 xl:px-8 py-3 max-w-[1280px] mx-auto transition-all duration-300">
-        <!-- Logo -->
-        <a href="index.html" class="flex items-center gap-2.5 group shrink-0">
-            <img src="assets/logo.jpeg" alt="Logo" class="h-11 w-11 rounded-full object-cover border-2 border-primary/20 group-hover:scale-105 transition-transform duration-300"/>
-            <div class="flex flex-col">
-                <span class="font-heading font-extrabold text-navy leading-tight text-sm lg:text-base tracking-tight group-hover:text-primary transition-colors whitespace-nowrap">AL RASHEED HOSPITAL</span>
-                <span class="font-sans text-[10px] font-semibold text-clinical-teal tracking-widest uppercase whitespace-nowrap">Kidney Center • Abbottabad</span>
-            </div>
-        </a>
-
-        <!-- Navigation links -->
-        <div class="hidden lg:flex items-center gap-3 xl:gap-5 font-heading text-[12.5px] xl:text-sm font-semibold text-navy flex-nowrap">
-            <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 whitespace-nowrap" href="index.html">Home</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 whitespace-nowrap" href="about.html">About Us</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 whitespace-nowrap" href="departments.html">Departments</a>
-            <a class="text-primary border-b-2 border-primary pb-0.5 transition-colors duration-200 whitespace-nowrap" href="doctors.html">Doctors</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 whitespace-nowrap" href="facilities.html">Facilities</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 whitespace-nowrap" href="kidney-care.html">Kidney Care</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 whitespace-nowrap" href="gallery.html">Gallery</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 whitespace-nowrap" href="compliance.html">Compliance</a>
-            <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 whitespace-nowrap" href="contact.html">Contact</a>
-        </div>
-
-        <!-- Book Appointment & Hamburger -->
-        <div class="flex items-center gap-3 shrink-0">
-            <a href="appointment.html" class="hidden lg:inline-block bg-primary hover:bg-primary-hover text-pure-white px-4 xl:px-6 py-2 xl:py-2.5 rounded-full font-heading text-xs xl:text-sm font-semibold active:scale-95 transition-all shadow-[0_4px_12px_rgba(175,16,26,0.25)] whitespace-nowrap">
-                Book Appointment
-            </a>
-            <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-lg text-navy hover:bg-slate-100 transition-colors" title="Menu">
-                <span class="material-symbols-outlined text-3xl">menu</span>
-            </button>
-        </div>
-    </nav>
-</header>
-
-<!-- Mobile Navigation Drawer -->
-<div id="mobile-menu-drawer" class="fixed inset-0 z-[999] bg-navy/60 backdrop-blur-sm flex justify-end translate-x-full transition-transform duration-300 lg:hidden">
-    <div class="w-[80%] max-w-sm bg-pure-white h-full p-6 shadow-2xl flex flex-col justify-between">
-        <div>
-            <div class="flex justify-between items-center mb-8 pb-4 border-b">
-                <div class="flex items-center gap-2">
-                    <img src="assets/logo.jpeg" alt="Logo" class="h-10 w-10 rounded-full"/>
-                    <span class="font-heading font-bold text-navy text-sm">Al Rasheed Hospital</span>
-                </div>
-                <button id="mobile-menu-close-btn" class="text-navy p-1 hover:bg-slate-100 rounded-full">
-                    <span class="material-symbols-outlined text-3xl">close</span>
-                </button>
-            </div>
-            
-            <div class="flex flex-col gap-4 font-heading text-base font-semibold text-navy">
-                <a class="hover:text-primary px-4 py-2.5 rounded-xl flex items-center justify-between transition-colors" href="index.html">
-                    <span>Home</span> <span class="material-symbols-outlined text-slate-400">chevron_right</span>
-                </a>
-                <a class="hover:text-primary px-4 py-2.5 rounded-xl flex items-center justify-between transition-colors" href="about.html">
-                    <span>About Us</span> <span class="material-symbols-outlined text-slate-400">chevron_right</span>
-                </a>
-                <a class="hover:text-primary px-4 py-2.5 rounded-xl flex items-center justify-between transition-colors" href="departments.html">
-                    <span>Departments</span> <span class="material-symbols-outlined text-slate-400">chevron_right</span>
-                </a>
-                <a class="text-primary bg-primary/5 px-4 py-2.5 rounded-xl flex items-center justify-between" href="doctors.html">
-                    <span>Doctors</span> <span class="material-symbols-outlined">chevron_right</span>
-                </a>
-                <a class="hover:text-primary px-4 py-2.5 rounded-xl flex items-center justify-between transition-colors" href="facilities.html">
-                    <span>Facilities</span> <span class="material-symbols-outlined text-slate-400">chevron_right</span>
-                </a>
-                <a class="hover:text-primary px-4 py-2.5 rounded-xl flex items-center justify-between transition-colors" href="kidney-care.html">
-                    <span>Kidney Care</span> <span class="material-symbols-outlined text-slate-400">chevron_right</span>
-                </a>
-                <a class="hover:text-primary px-4 py-2.5 rounded-xl flex items-center justify-between transition-colors" href="gallery.html">
-                    <span>Gallery</span> <span class="material-symbols-outlined text-slate-400">chevron_right</span>
-                </a>
-                <a class="hover:text-primary px-4 py-2.5 rounded-xl flex items-center justify-between transition-colors" href="compliance.html">
-                    <span>Compliance</span> <span class="material-symbols-outlined text-slate-400">chevron_right</span>
-                </a>
-                <a class="hover:text-primary px-4 py-2.5 rounded-xl flex items-center justify-between transition-colors" href="contact.html">
-                    <span>Contact</span> <span class="material-symbols-outlined text-slate-400">chevron_right</span>
-                </a>
-            </div>
-        </div>
-        
-        <div class="mt-auto pt-6 border-t">
-            <a href="appointment.html" class="w-full text-center block bg-primary hover:bg-primary-hover text-pure-white py-3 rounded-xl font-heading font-semibold transition-colors shadow-lg">
-                Book Appointment
-            </a>
-        </div>
-    </div>
-</div>
+<?php
+require_once __DIR__ . '/include/site-config.php';
+$pageTitle = 'Panel of Consultants | Al Rasheed Hospital & Kidney Center';
+$pageDescription = 'Panel of Consultants at Al Rasheed Hospital & Kidney Center, Abbottabad - Profiles of our specialist urologists, nephrologists, gynecologists, surgeons, and physicians.';
+$currentPage = 'doctors';
+include __DIR__ . '/include/head.php';
+include __DIR__ . '/include/header.php';
+?>
 
 <main>
     <!-- Page Hero Banner -->
@@ -206,7 +54,7 @@
                         <p><strong>Qualifications:</strong> MBBS, FCPS (Urology)</p>
                         <p><strong>Experience:</strong> 20+ Years Clinical Practice</p>
                     </div>
-                    <a href="appointment.html?doc=nasir-jamil" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
+                    <a href="appointment.php?doc=nasir-jamil" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
                 </div>
             </div>
 
@@ -223,7 +71,7 @@
                         <p><strong>Qualifications:</strong> MBBS, FCPS (Nephrology)</p>
                         <p><strong>Position:</strong> Consultant Nephrologist Physician, HOD Nephrology, Jinnah International Hospital Abbottabad</p>
                     </div>
-                    <a href="appointment.html?doc=usman-zia" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
+                    <a href="appointment.php?doc=usman-zia" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
                 </div>
             </div>
 
@@ -240,7 +88,7 @@
                         <p><strong>Qualifications:</strong> MBBS, FCPS</p>
                         <p><strong>Clinical Focus:</strong> High-risk pregnancies, obstetric complications</p>
                     </div>
-                    <a href="appointment.html?doc=rubina-bashir" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
+                    <a href="appointment.php?doc=rubina-bashir" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
                 </div>
             </div>
 
@@ -257,7 +105,7 @@
                         <p><strong>Qualifications:</strong> MBBS (Gold Medalist), FCPS OBS/Gynae, FECPS Urogynae, ICMT Liverpool</p>
                         <p><strong>Clinical Focus:</strong> Urogynae and general obstetric procedures</p>
                     </div>
-                    <a href="appointment.html?doc=sadia-irum" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
+                    <a href="appointment.php?doc=sadia-irum" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
                 </div>
             </div>
 
@@ -274,7 +122,7 @@
                         <p><strong>Qualifications:</strong> MBBS-MS Ortho (Malaysia), Fellowship Arthroplasty (Malaysia), AO Certified (Switzerland)</p>
                         <p><strong>Affiliations:</strong> Member of Pakistan Orthopedic Association</p>
                     </div>
-                    <a href="appointment.html?doc=usman-shah" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
+                    <a href="appointment.php?doc=usman-shah" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
                 </div>
             </div>
 
@@ -291,7 +139,7 @@
                         <p><strong>Qualifications:</strong> MBBS, FCPS</p>
                         <p><strong>Position:</strong> Associate Professor, General and Laparoscopic Surgeon</p>
                     </div>
-                    <a href="appointment.html?doc=ismail-akbar" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
+                    <a href="appointment.php?doc=ismail-akbar" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
                 </div>
             </div>
 
@@ -308,7 +156,7 @@
                         <p><strong>Specialties:</strong> General, Laparoscopic, Bariatric & Laser Surgery</p>
                         <p><strong>Clinical Focus:</strong> Minimally invasive obesity & laser treatments</p>
                     </div>
-                    <a href="appointment.html?doc=uzair-arif" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
+                    <a href="appointment.php?doc=uzair-arif" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
                 </div>
             </div>
 
@@ -325,7 +173,7 @@
                         <p><strong>Qualifications:</strong> Fellowship FCPS HPB & Liver Transplantation PKLI & RC Lahore, FCPS General/Laparoscopic</p>
                         <p><strong>Clinical Focus:</strong> Hepato-pancreato-biliary surgery</p>
                     </div>
-                    <a href="appointment.html?doc=nadir-farid" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
+                    <a href="appointment.php?doc=nadir-farid" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
                 </div>
             </div>
 
@@ -341,7 +189,7 @@
                     <div class="text-xs text-on-surface-variant space-y-1.5 mb-6">
                         <p><strong>Position:</strong> Assistant Professor, HPB Surgery and Liver Transplant KTH Peshawar</p>
                     </div>
-                    <a href="appointment.html?doc=siddique-khan" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
+                    <a href="appointment.php?doc=siddique-khan" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
                 </div>
             </div>
 
@@ -358,7 +206,7 @@
                         <p><strong>Qualifications:</strong> MBBS, FCPS</p>
                         <p><strong>Clinical Focus:</strong> General Internal Medicine & Diabetologist</p>
                     </div>
-                    <a href="appointment.html?doc=awais-faizi" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
+                    <a href="appointment.php?doc=awais-faizi" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
                 </div>
             </div>
 
@@ -375,7 +223,7 @@
                         <p><strong>Qualifications:</strong> MBBS, FCPS</p>
                         <p><strong>Position:</strong> Associate Professor, Pediatric medicine</p>
                     </div>
-                    <a href="appointment.html?doc=ghulam-mohiuddin" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
+                    <a href="appointment.php?doc=ghulam-mohiuddin" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
                 </div>
             </div>
 
@@ -392,7 +240,7 @@
                         <p><strong>Qualifications:</strong> MBBS, FCPS (Neurosurgery)</p>
                         <p><strong>Specialty:</strong> Brain, spinal cord and nervous system disorders</p>
                     </div>
-                    <a href="appointment.html?doc=ibrahim-mushtaq" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
+                    <a href="appointment.php?doc=ibrahim-mushtaq" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
                 </div>
             </div>
 
@@ -409,7 +257,7 @@
                         <p><strong>Qualifications:</strong> MBBS, FCPS</p>
                         <p><strong>Position:</strong> Head of Diagnostic Imaging & Ultrasound department</p>
                     </div>
-                    <a href="appointment.html?doc=ajmal-mehmood" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
+                    <a href="appointment.php?doc=ajmal-mehmood" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
                 </div>
             </div>
 
@@ -426,7 +274,7 @@
                         <p><strong>Qualifications:</strong> MBBS, FCPS</p>
                         <p><strong>Clinical Focus:</strong> Clinical dermatology, skin, and laser procedures</p>
                     </div>
-                    <a href="appointment.html?doc=shapara-shakeel" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
+                    <a href="appointment.php?doc=shapara-shakeel" class="w-full text-center mt-auto block border border-slate-200 text-navy py-2 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">Book Appointment</a>
                 </div>
             </div>
 
@@ -488,11 +336,11 @@
                     Our medical receptionists are active 24/7 to connect you with on-call duty specialists, urology surgeons, or renal dialysis coordinators.
                 </p>
                 <div class="flex flex-wrap justify-center gap-4">
-                    <a href="appointment.html" class="bg-primary hover:bg-primary-hover text-pure-white px-8 py-3.5 rounded-full font-heading text-sm font-bold transition-all shadow-md">
+                    <a href="appointment.php" class="bg-primary hover:bg-primary-hover text-pure-white px-8 py-3.5 rounded-full font-heading text-sm font-bold transition-all shadow-md">
                         Book Online Consultation
                     </a>
                     <a href="tel:03177338830" class="border border-white/20 hover:border-pure-white text-pure-white px-8 py-3.5 rounded-full font-heading text-sm font-bold transition-all">
-                        Call Helpline: 0317-7338830
+                        Call Helpline: 03177338830
                     </a>
                 </div>
             </div>
@@ -500,75 +348,4 @@
     </section>
 </main>
 
-<!-- Footer -->
-<footer class="bg-navy text-pure-white pt-16 pb-8 border-t border-white/5">
-    <div class="max-w-[1280px] mx-auto px-4 md:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-12">
-            <!-- Col 1 -->
-            <div class="lg:col-span-4">
-                <a href="index.html" class="flex items-center gap-3 mb-6">
-                    <img src="assets/logo.jpeg" alt="Logo" class="h-10 w-10 rounded-full border border-white/20"/>
-                    <div class="flex flex-col">
-                        <span class="font-heading font-extrabold text-pure-white tracking-tight leading-tight">AL RASHEED HOSPITAL</span>
-                        <span class="text-[10px] text-clinical-teal uppercase font-bold tracking-widest">Kidney Center • Abbottabad</span>
-                    </div>
-                </a>
-                <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                    Providing specialized renal care and comprehensive medical services with a commitment to clinical excellence, patient safety, and empathy.
-                </p>
-                <div class="flex gap-3">
-                    <a href="#" class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-pure-white transition-all text-slate-300" title="Facebook"><span class="material-symbols-outlined text-sm">face</span></a>
-                    <a href="#" class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-pure-white transition-all text-slate-300" title="YouTube"><span class="material-symbols-outlined text-sm">video_library</span></a>
-                    <a href="#" class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-pure-white transition-all text-slate-300" title="Mail"><span class="material-symbols-outlined text-sm">mail</span></a>
-                </div>
-            </div>
-            
-            <!-- Col 2 -->
-            <div class="lg:col-span-2">
-                <h4 class="font-heading font-bold text-sm text-clinical-teal uppercase tracking-widest mb-6">Quick Links</h4>
-                <ul class="space-y-3.5 text-slate-400 text-sm font-medium">
-                    <li><a class="hover:text-pure-white transition-colors" href="index.html">Home</a></li>
-                    <li><a class="hover:text-pure-white transition-colors" href="about.html">About Us</a></li>
-                    <li><a class="hover:text-pure-white transition-colors" href="departments.html">Departments</a></li>
-                    <li><a class="hover:text-pure-white transition-colors" href="doctors.html">Our Doctors</a></li>
-                    <li><a class="hover:text-pure-white transition-colors" href="facilities.html">Facilities</a></li>
-                </ul>
-            </div>
-            
-            <!-- Col 3 -->
-            <div class="lg:col-span-3">
-                <h4 class="font-heading font-bold text-sm text-clinical-teal uppercase tracking-widest mb-6">Key Specialties</h4>
-                <ul class="space-y-3.5 text-slate-400 text-sm font-medium">
-                    <li><a class="hover:text-pure-white transition-colors" href="kidney-care.html">Nephrology & Dialysis</a></li>
-                    <li><a class="hover:text-pure-white transition-colors" href="departments.html">Urology Department</a></li>
-                    <li><a class="hover:text-pure-white transition-colors" href="departments.html">General Surgery</a></li>
-                    <li><a class="hover:text-pure-white transition-colors" href="facilities.html">Intensive Care Unit (ICU)</a></li>
-                    <li><a class="hover:text-pure-white transition-colors" href="compliance.html">KP Health Commission</a></li>
-                </ul>
-            </div>
-            
-            <!-- Col 4 -->
-            <div class="lg:col-span-3">
-                <h4 class="font-heading font-bold text-sm text-clinical-teal uppercase tracking-widest mb-6">Contact Details</h4>
-                <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                    Main Mansehra Road, Kala Pull, Abbottabad, Pakistan.
-                </p>
-                <div class="mt-4 p-4 bg-white/5 rounded-2xl border border-white/5">
-                    <p class="text-[10px] text-primary uppercase font-bold tracking-widest mb-1">24/7 Emergency Helpline</p>
-                    <p class="font-heading font-bold text-pure-white text-base"><a href="tel:03177338830">0317-7338830</a></p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left text-xs text-slate-400">
-            <p>© 2026 Al Rasheed Hospital & Kidney Center. Licensed by HCCR (No. 01-001353/26).</p>
-        </div>
-    </div>
-</footer>
-
-<!-- Shared JavaScript logic -->
-<script src="script.js"></script>
-
-</body>
-</html>
-
+<?php include __DIR__ . '/include/footer.php'; ?>

@@ -1,319 +1,86 @@
-<!DOCTYPE html>
-<html class="scroll-smooth" lang="en">
+<?php
+require_once __DIR__ . '/include/site-config.php';
+$pageTitle = SITE_NAME . ' | ' . SITE_TAGLINE;
+$pageDescription = SITE_NAME . ', Abbottabad - Providing premium specialized renal care, dialysis, surgery, and 24/7 emergency care with compassion.';
+$currentPage = 'home';
+include __DIR__ . '/include/head.php';
+include __DIR__ . '/include/header.php';
+?>
 
-<head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta name="description"
-        content="Al Rasheed Hospital & Kidney Center, Abbottabad - Providing premium specialized renal care, dialysis, surgery, and 24/7 emergency care with compassion." />
-    <title>Al Rasheed Hospital & Kidney Center | Care with Compassion</title>
-
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-
-    <!-- Google Fonts & Material Symbols -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet" />
-
-    <!-- Custom CSS File -->
-    <link rel="stylesheet" href="custom.css" />
-
-    <!-- Tailwind Theme Config -->
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#af101a", // Crescent Red
-                        "primary-hover": "#8f0d15",
-                        "clinical-teal": "#00897B", // Clinical Teal
-                        "vitality-green": "#2E7D32", // Hands Green
-                        "navy": "#0D2137", // Main header/footer navy
-                        "navy-light": "#193754",
-                        "surface-gray": "#F5F7FA",
-                        "background": "#f8f9ff",
-                        "on-surface": "#081c32",
-                        "on-surface-variant": "#4A5568",
-                        "pure-white": "#FFFFFF"
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "2xl": "1rem",
-                        "3xl": "1.5rem",
-                        "full": "9999px"
-                    },
-                    fontFamily: {
-                        sans: ["Inter", "sans-serif"],
-                        heading: ["Poppins", "sans-serif"],
-                        display: ["Plus Jakarta Sans", "sans-serif"]
-                    }
-                }
-            }
-        }
-    </script>
-</head>
-
-<body class="bg-background text-on-surface font-sans overflow-x-hidden">
-
-    <!-- 1. TOPBAR -->
-    <div class="bg-navy text-pure-white text-sm py-2.5 px-4 md:px-8 border-b border-white/10 hidden sm:block">
-        <div class="max-w-[1280px] mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
-            <div class="flex flex-wrap items-center gap-4 lg:gap-6">
-                <a href="tel:0992406982" class="flex items-center gap-1.5 hover:text-primary transition-colors">
-                    <span class="material-symbols-outlined text-sm text-primary">call</span>
-                    <span>0992-406982 / 83</span>
-                </a>
-                <a href="tel:03177338830" class="flex items-center gap-1.5 hover:text-primary transition-colors">
-                    <span class="material-symbols-outlined text-sm text-primary">phone_iphone</span>
-                    <span>0317-7338830</span>
-                </a>
-                <a href="mailto:rashidhospi@gmail.com"
-                    class="flex items-center gap-1.5 hover:text-primary transition-colors">
-                    <span class="material-symbols-outlined text-sm text-primary">mail</span>
-                    <span>rashidhospi@gmail.com</span>
-                </a>
-            </div>
-            <div class="flex items-center gap-4">
-                <span class="text-xs text-slate-400 border-r border-white/20 pr-4">HCCR License: 01-001353/26</span>
-                <div class="flex gap-3">
-                    <a href="#" class="hover:text-primary transition-colors" title="Facebook"><span
-                            class="material-symbols-outlined text-base">face</span></a>
-                    <a href="#" class="hover:text-primary transition-colors" title="YouTube"><span
-                            class="material-symbols-outlined text-base">video_library</span></a>
-                    <a href="#" class="hover:text-primary transition-colors" title="Contact Us"><span
-                            class="material-symbols-outlined text-base">chat_bubble</span></a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- 2. STICKY NAVBAR -->
-    <header
-        class="sticky top-0 w-full z-50 shadow-[0_2px_16px_rgba(13,33,55,0.08)] bg-pure-white transition-all duration-300">
-        <nav
-            class="flex justify-between items-center w-full px-4 lg:px-6 xl:px-8 py-3 max-w-[1280px] mx-auto transition-all duration-300">
-            <!-- Logo -->
-            <a href="index.html" class="flex items-center gap-2.5 group shrink-0">
-                <img src="assets/logo.jpeg" alt="Al Rasheed Hospital Logo"
-                    class="h-11 w-11 rounded-full object-cover border-2 border-primary/20 group-hover:scale-105 transition-transform duration-300" />
-                <div class="flex flex-col">
-                    <span
-                        class="font-heading font-extrabold text-navy leading-tight text-sm lg:text-base tracking-tight group-hover:text-primary transition-colors whitespace-nowrap">AL
-                        RASHEED HOSPITAL</span>
-                    <span
-                        class="font-sans text-[10px] font-semibold text-clinical-teal tracking-widest uppercase whitespace-nowrap">Kidney
-                        Center • Abbottabad</span>
-                </div>
-            </a>
-
-            <!-- Desktop Navigation links -->
-            <div
-                class="hidden lg:flex items-center gap-3 xl:gap-5 font-heading text-[12.5px] xl:text-sm font-semibold text-navy flex-nowrap">
-                <a class="text-primary border-b-2 border-primary pb-0.5 transition-colors duration-200 whitespace-nowrap"
-                    href="index.html">Home</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 whitespace-nowrap"
-                    href="about.html">About Us</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 whitespace-nowrap"
-                    href="departments.html">Departments</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 whitespace-nowrap"
-                    href="doctors.html">Doctors</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 whitespace-nowrap"
-                    href="facilities.html">Facilities</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 whitespace-nowrap"
-                    href="kidney-care.html">Kidney Care</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 whitespace-nowrap"
-                    href="gallery.html">Gallery</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 whitespace-nowrap"
-                    href="compliance.html">Compliance</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors duration-200 whitespace-nowrap"
-                    href="contact.html">Contact</a>
-            </div>
-
-            <!-- Appointment & Hamburger -->
-            <div class="flex items-center gap-3 shrink-0">
-                <a href="appointment.html"
-                    class="hidden lg:inline-block bg-primary hover:bg-primary-hover text-pure-white px-4 xl:px-6 py-2 xl:py-2.5 rounded-full font-heading text-xs xl:text-sm font-semibold active:scale-95 transition-all shadow-[0_4px_12px_rgba(175,16,26,0.25)] whitespace-nowrap">
-                    Book Appointment
-                </a>
-                <button id="mobile-menu-btn"
-                    class="lg:hidden p-2 rounded-lg text-navy hover:bg-slate-100 transition-colors" title="Menu">
-                    <span class="material-symbols-outlined text-3xl">menu</span>
-                </button>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu-drawer"
-        class="fixed inset-0 z-[999] bg-navy/60 backdrop-blur-sm flex justify-end translate-x-full transition-transform duration-300 lg:hidden">
-        <div class="w-[80%] max-w-sm bg-pure-white h-full p-6 shadow-2xl flex flex-col justify-between">
-            <div>
-                <div class="flex justify-between items-center mb-8 pb-4 border-b">
-                    <div class="flex items-center gap-2">
-                        <img src="assets/logo.jpeg" alt="Logo" class="h-10 w-10 rounded-full" />
-                        <span class="font-heading font-bold text-navy text-sm">Al Rasheed Hospital</span>
-                    </div>
-                    <button id="mobile-menu-close-btn" class="text-navy p-1 hover:bg-slate-100 rounded-full">
-                        <span class="material-symbols-outlined text-3xl">close</span>
-                    </button>
-                </div>
-
-                <div class="flex flex-col gap-4 font-heading text-base font-semibold text-navy">
-                    <a class="text-primary bg-primary/5 px-4 py-2.5 rounded-xl flex items-center justify-between"
-                        href="index.html">
-                        <span>Home</span> <span class="material-symbols-outlined">chevron_right</span>
-                    </a>
-                    <a class="hover:text-primary px-4 py-2.5 rounded-xl flex items-center justify-between transition-colors"
-                        href="about.html">
-                        <span>About Us</span> <span
-                            class="material-symbols-outlined text-slate-400">chevron_right</span>
-                    </a>
-                    <a class="hover:text-primary px-4 py-2.5 rounded-xl flex items-center justify-between transition-colors"
-                        href="departments.html">
-                        <span>Departments</span> <span
-                            class="material-symbols-outlined text-slate-400">chevron_right</span>
-                    </a>
-                    <a class="hover:text-primary px-4 py-2.5 rounded-xl flex items-center justify-between transition-colors"
-                        href="doctors.html">
-                        <span>Doctors</span> <span class="material-symbols-outlined text-slate-400">chevron_right</span>
-                    </a>
-                    <a class="hover:text-primary px-4 py-2.5 rounded-xl flex items-center justify-between transition-colors"
-                        href="facilities.html">
-                        <span>Facilities</span> <span
-                            class="material-symbols-outlined text-slate-400">chevron_right</span>
-                    </a>
-                    <a class="hover:text-primary px-4 py-2.5 rounded-xl flex items-center justify-between transition-colors"
-                        href="kidney-care.html">
-                        <span>Kidney Care</span> <span
-                            class="material-symbols-outlined text-slate-400">chevron_right</span>
-                    </a>
-                    <a class="hover:text-primary px-4 py-2.5 rounded-xl flex items-center justify-between transition-colors"
-                        href="gallery.html">
-                        <span>Gallery</span> <span class="material-symbols-outlined text-slate-400">chevron_right</span>
-                    </a>
-                    <a class="hover:text-primary px-4 py-2.5 rounded-xl flex items-center justify-between transition-colors"
-                        href="compliance.html">
-                        <span>Compliance</span> <span
-                            class="material-symbols-outlined text-slate-400">chevron_right</span>
-                    </a>
-                    <a class="hover:text-primary px-4 py-2.5 rounded-xl flex items-center justify-between transition-colors"
-                        href="contact.html">
-                        <span>Contact</span> <span class="material-symbols-outlined text-slate-400">chevron_right</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="mt-auto pt-6 border-t">
-                <a href="appointment.html"
-                    class="w-full text-center block bg-primary hover:bg-primary-hover text-pure-white py-3 rounded-xl font-heading font-semibold transition-colors shadow-lg">
-                    Book Appointment
-                </a>
-                <div class="mt-4 text-center text-xs text-on-surface-variant font-medium">
-                    Emergency Hotline:<br />
-                    <a href="tel:03177338830" class="text-primary font-bold text-sm">0317-7338830</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <main>
+<main>
         <!-- Section 1: Hero Slider -->
-        <section class="relative h-[550px] md:h-[680px] w-full overflow-hidden bg-navy">
+        <section class="relative w-full overflow-hidden bg-navy" id="hero-section">
             <div class="relative w-full h-full" id="hero-slider">
                 <!-- Slide 1 -->
-                <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out fade-slide-active"
-                    data-slide="1">
-                    <div class="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/60 to-transparent z-10"></div>
-                    <img class="w-full h-full object-cover" src="assets/hero_background.jpg"
-                        alt="Al Rasheed Hospital Exterior Abbottabad" />
-                    <div class="absolute inset-0 z-20 flex items-center px-6 md:px-12 max-w-[1280px] mx-auto">
-                        <div class="max-w-3xl">
-                            <span
-                                class="inline-block bg-primary text-pure-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4">Established
-                                May 2023</span>
-                            <h1
-                                class="font-display font-extrabold text-3xl md:text-5xl lg:text-6xl text-pure-white mb-6 leading-tight tracking-tight">
-                                Advanced Medical Care in Abbottabad</h1>
-                            <p class="font-sans text-base md:text-lg text-slate-300 mb-10 max-w-xl leading-relaxed">
-                                Experience healthcare excellence with Al Rasheed's state-of-the-art facilities,
-                                specialized kidney center, and compassionate expert medical staff.</p>
-                            <div class="flex flex-wrap gap-4">
-                                <a href="appointment.html"
-                                    class="bg-primary hover:bg-primary-hover text-pure-white px-8 py-4 rounded-full font-heading font-semibold transition-all flex items-center justify-center gap-2 shadow-lg">
-                                    Book Appointment <span class="material-symbols-outlined">calendar_month</span>
-                                </a>
-                                <a href="departments.html"
-                                    class="border-2 border-pure-white text-pure-white px-8 py-4 rounded-full font-heading font-semibold hover:bg-pure-white hover:text-navy transition-all">
-                                    Our Specialties
-                                </a>
+                <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out fade-slide-active" data-slide="1">
+                    <div class="absolute inset-0 hero-slide-overlay z-10"></div>
+                    <img class="w-full h-full object-cover" src="assets/hero_background.jpg" alt="Al Rasheed Hospital Exterior Abbottabad" loading="eager" />
+                    <div class="absolute inset-0 z-20 hero-slide-content">
+                        <div class="max-w-[1280px] mx-auto w-full">
+                            <div class="max-w-2xl w-full">
+                                <span class="hero-badge bg-primary text-pure-white">Established May 2023</span>
+                                <h1 class="hero-title font-display font-extrabold text-pure-white">Advanced Medical Care in Abbottabad</h1>
+                                <p class="hero-desc font-sans text-slate-300">
+                                    Experience healthcare excellence with Al Rasheed's state-of-the-art facilities, specialized kidney center, and compassionate expert medical staff.
+                                </p>
+                                <div class="hero-cta-group">
+                                    <a href="appointment.php" class="hero-btn hero-btn-primary font-heading">
+                                        Book Appointment <span class="material-symbols-outlined">calendar_month</span>
+                                    </a>
+                                    <a href="departments.php" class="hero-btn hero-btn-outline font-heading">
+                                        Our Specialties
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Slide 2 -->
-                <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out"
-                    data-slide="2">
-                    <div class="absolute inset-0 bg-gradient-to-r from-navy/90 via-clinical-teal/40 to-navy/20 z-10">
-                    </div>
-                    <img class="w-full h-full object-cover" src="assets/icu_interior.png"
-                        alt="Al Rasheed Hospital ICU Facilities" />
-                    <div class="absolute inset-0 z-20 flex items-center px-6 md:px-12 max-w-[1280px] mx-auto">
-                        <div class="max-w-3xl">
-                            <span
-                                class="inline-block bg-clinical-teal text-pure-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4">Critical
-                                Care Excellence</span>
-                            <h1
-                                class="font-display font-extrabold text-3xl md:text-5xl lg:text-6xl text-pure-white mb-6 leading-tight tracking-tight">
-                                World-Class ICU Facilities</h1>
-                            <p class="font-sans text-base md:text-lg text-slate-300 mb-10 max-w-xl leading-relaxed">
-                                Providing 24/7 dedicated critical care services with modern ventilators, cardiac
-                                monitors, and round-the-clock intensivists monitoring your loved ones.</p>
-                            <div class="flex flex-wrap gap-4">
-                                <a href="facilities.html"
-                                    class="bg-clinical-teal hover:bg-teal-700 text-pure-white px-8 py-4 rounded-full font-heading font-semibold transition-all flex items-center justify-center gap-2 shadow-lg">
-                                    Explore ICU Unit <span class="material-symbols-outlined">arrow_forward</span>
-                                </a>
-                                <a href="tel:03177338830"
-                                    class="border-2 border-pure-white text-pure-white bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full font-heading font-semibold hover:bg-white hover:text-navy transition-all flex items-center gap-2">
-                                    <span class="material-symbols-outlined">call</span> 24/7 Emergency Line
-                                </a>
+                <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out" data-slide="2">
+                    <div class="absolute inset-0 hero-slide-overlay z-10" style="background: linear-gradient(105deg, rgba(13,33,55,0.92) 0%, rgba(0,137,123,0.35) 50%, rgba(13,33,55,0.2) 100%);"></div>
+                    <img class="w-full h-full object-cover" src="assets/icu_interior.png" alt="Al Rasheed Hospital ICU Facilities" loading="lazy" />
+                    <div class="absolute inset-0 z-20 hero-slide-content">
+                        <div class="max-w-[1280px] mx-auto w-full">
+                            <div class="max-w-2xl w-full">
+                                <span class="hero-badge bg-clinical-teal text-pure-white">Critical Care Excellence</span>
+                                <h1 class="hero-title font-display font-extrabold text-pure-white">World-Class ICU Facilities</h1>
+                                <p class="hero-desc font-sans text-slate-300">
+                                    Providing 24/7 dedicated critical care services with modern ventilators, cardiac monitors, and round-the-clock intensivists monitoring your loved ones.
+                                </p>
+                                <div class="hero-cta-group">
+                                    <a href="facilities.php" class="hero-btn hero-btn-teal font-heading">
+                                        Explore ICU Unit <span class="material-symbols-outlined">arrow_forward</span>
+                                    </a>
+                                    <a href="tel:<?php echo SITE_MOBILE_WHATSAPP; ?>" class="hero-btn hero-btn-outline font-heading">
+                                        <span class="material-symbols-outlined">call</span> 24/7 Emergency
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Slide 3 -->
-                <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out"
-                    data-slide="3">
-                    <div class="absolute inset-0 bg-gradient-to-r from-navy/92 via-navy/55 to-primary/30 z-10"></div>
-                    <img class="w-full h-full object-cover" src="assets/dialysis_unit.png"
-                        alt="Al Rasheed Hospital Dialysis Center" />
-                    <div class="absolute inset-0 z-20 flex items-center px-6 md:px-12 max-w-[1280px] mx-auto">
-                        <div class="max-w-3xl">
-                            <span
-                                class="inline-block bg-vitality-green text-pure-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider mb-4">First
-                                in Abbottabad Region</span>
-                            <h1
-                                class="font-display font-extrabold text-3xl md:text-5xl lg:text-6xl text-pure-white mb-6 leading-tight tracking-tight">
-                                Pioneering HDF Dialysis Services</h1>
-                            <p class="font-sans text-base md:text-lg text-slate-300 mb-10 max-w-xl leading-relaxed">
-                                Introducing Hemodiafiltration (HDF) services under the expert supervision of
-                                Nephrologist Dr. Muhammad Usman Zia. Dedicated Free Dialysis programs for patients in
-                                need.</p>
-                            <div class="flex flex-wrap gap-4">
-                                <a href="kidney-care.html"
-                                    class="bg-primary hover:bg-primary-hover text-pure-white px-8 py-4 rounded-full font-heading font-semibold transition-all flex items-center justify-center gap-2 shadow-lg">
-                                    Kidney Care Services <span class="material-symbols-outlined">opacity</span>
-                                </a>
-                                <a href="about.html"
-                                    class="border-2 border-pure-white text-pure-white bg-white/10 backdrop-blur-sm px-8 py-4 rounded-full font-heading font-semibold hover:bg-pure-white hover:text-navy transition-all">
-                                    Learn About Our Mission
-                                </a>
+                <div class="hero-slide absolute inset-0 opacity-0 transition-opacity duration-1000 ease-in-out" data-slide="3">
+                    <div class="absolute inset-0 hero-slide-overlay z-10" style="background: linear-gradient(105deg, rgba(13,33,55,0.93) 0%, rgba(13,33,55,0.65) 45%, rgba(175,16,26,0.25) 100%);"></div>
+                    <img class="w-full h-full object-cover" src="assets/dialysis_unit.png" alt="Al Rasheed Hospital Dialysis Center" loading="lazy" />
+                    <div class="absolute inset-0 z-20 hero-slide-content">
+                        <div class="max-w-[1280px] mx-auto w-full">
+                            <div class="max-w-2xl w-full">
+                                <span class="hero-badge bg-vitality-green text-pure-white">First in Abbottabad Region</span>
+                                <h1 class="hero-title font-display font-extrabold text-pure-white">Pioneering HDF Dialysis Services</h1>
+                                <p class="hero-desc font-sans text-slate-300">
+                                    Introducing Hemodiafiltration (HDF) services under the expert supervision of Nephrologist Dr. Muhammad Usman Zia. Dedicated Free Dialysis programs for patients in need.
+                                </p>
+                                <div class="hero-cta-group">
+                                    <a href="kidney-care.php" class="hero-btn hero-btn-primary font-heading">
+                                        Kidney Care <span class="material-symbols-outlined">opacity</span>
+                                    </a>
+                                    <a href="about.php" class="hero-btn hero-btn-outline font-heading">
+                                        Our Mission
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -321,22 +88,15 @@
             </div>
 
             <!-- Slider Controls -->
-            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex gap-4">
-                <button
-                    class="slider-dot w-8 h-3 rounded-full bg-pure-white bg-opacity-100 transition-all hover:bg-opacity-100"
-                    data-to="0"></button>
-                <button
-                    class="slider-dot w-3 h-3 rounded-full bg-pure-white bg-opacity-40 transition-all hover:bg-opacity-100"
-                    data-to="1"></button>
-                <button
-                    class="slider-dot w-3 h-3 rounded-full bg-pure-white bg-opacity-40 transition-all hover:bg-opacity-100"
-                    data-to="2"></button>
+            <div class="hero-slider-dots" role="tablist" aria-label="Hero slides">
+                <button type="button" class="slider-dot w-8 h-2.5 rounded-full bg-pure-white bg-opacity-100" data-to="0" aria-label="Slide 1" aria-selected="true"></button>
+                <button type="button" class="slider-dot w-2.5 h-2.5 rounded-full bg-pure-white bg-opacity-40" data-to="1" aria-label="Slide 2" aria-selected="false"></button>
+                <button type="button" class="slider-dot w-2.5 h-2.5 rounded-full bg-pure-white bg-opacity-40" data-to="2" aria-label="Slide 3" aria-selected="false"></button>
             </div>
         </section>
 
         <!-- Section 2: Stats Bar -->
-        <section
-            class="relative z-40 -mt-16 mx-4 max-w-[1200px] md:mx-auto bg-primary text-pure-white rounded-3xl shadow-[0_12px_40px_rgba(175,16,26,0.3)] border border-primary/20 stats-trigger">
+        <section class="relative z-40 mx-4 max-w-[1200px] md:mx-auto bg-primary text-pure-white rounded-2xl sm:rounded-3xl shadow-[0_12px_40px_rgba(175,16,26,0.3)] border border-primary/20 stats-trigger">
             <div
                 class="grid grid-cols-2 lg:grid-cols-4 gap-y-6 lg:gap-y-0 divide-x-0 lg:divide-x divide-white/10 p-4 sm:p-6 md:p-10 text-center">
                 <div class="py-2 lg:py-0">
@@ -408,7 +168,7 @@
                     </div>
 
                     <div class="flex items-center gap-4">
-                        <a href="about.html"
+                        <a href="about.php"
                             class="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-heading font-bold text-sm transition-all group">
                             Discover Our Leadership Team
                             <span
@@ -465,7 +225,7 @@
                         <p class="font-sans text-sm text-on-surface-variant mb-6 leading-relaxed">Rapid response 24/7
                             emergency unit fully equipped for critical trauma care.</p>
                         <a class="text-primary hover:text-primary-hover font-heading font-bold text-xs flex items-center gap-1.5 transition-colors group-hover:underline"
-                            href="departments.html">
+                            href="departments.php">
                             View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </a>
                     </div>
@@ -481,7 +241,7 @@
                         <p class="font-sans text-sm text-on-surface-variant mb-6 leading-relaxed">Expert renal
                             replacement therapy including pioneering HDF dialysis.</p>
                         <a class="text-clinical-teal hover:text-teal-700 font-heading font-bold text-xs flex items-center gap-1.5 transition-colors group-hover:underline"
-                            href="kidney-care.html">
+                            href="kidney-care.php">
                             View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </a>
                     </div>
@@ -497,7 +257,7 @@
                         <p class="font-sans text-sm text-on-surface-variant mb-6 leading-relaxed">6 Operating theaters
                             for advanced laparoscopic and general surgeries.</p>
                         <a class="text-primary hover:text-primary-hover font-heading font-bold text-xs flex items-center gap-1.5 transition-colors group-hover:underline"
-                            href="departments.html">
+                            href="departments.php">
                             View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </a>
                     </div>
@@ -513,7 +273,7 @@
                         <p class="font-sans text-sm text-on-surface-variant mb-6 leading-relaxed">Modern life-support
                             units and round-the-clock intensivist coverage.</p>
                         <a class="text-clinical-teal hover:text-teal-700 font-heading font-bold text-xs flex items-center gap-1.5 transition-colors group-hover:underline"
-                            href="facilities.html">
+                            href="facilities.php">
                             View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </a>
                     </div>
@@ -529,7 +289,7 @@
                         <p class="font-sans text-sm text-on-surface-variant mb-6 leading-relaxed">Fully automated
                             diagnostic laboratory providing 24/7 precise reports.</p>
                         <a class="text-primary hover:text-primary-hover font-heading font-bold text-xs flex items-center gap-1.5 transition-colors group-hover:underline"
-                            href="facilities.html">
+                            href="facilities.php">
                             View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </a>
                     </div>
@@ -545,7 +305,7 @@
                         <p class="font-sans text-sm text-on-surface-variant mb-6 leading-relaxed">In-house pharmacy
                             ensuring continuous availability of quality drugs.</p>
                         <a class="text-clinical-teal hover:text-teal-700 font-heading font-bold text-xs flex items-center gap-1.5 transition-colors group-hover:underline"
-                            href="facilities.html">
+                            href="facilities.php">
                             View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </a>
                     </div>
@@ -561,7 +321,7 @@
                         <p class="font-sans text-sm text-on-surface-variant mb-6 leading-relaxed">Dedicated Labor Room
                             and specialized Neonatal Care units.</p>
                         <a class="text-primary hover:text-primary-hover font-heading font-bold text-xs flex items-center gap-1.5 transition-colors group-hover:underline"
-                            href="facilities.html">
+                            href="facilities.php">
                             View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </a>
                     </div>
@@ -577,14 +337,14 @@
                         <p class="font-sans text-sm text-on-surface-variant mb-6 leading-relaxed">Medical consultations
                             across 17 specialist departments.</p>
                         <a class="text-clinical-teal hover:text-teal-700 font-heading font-bold text-xs flex items-center gap-1.5 transition-colors group-hover:underline"
-                            href="doctors.html">
+                            href="doctors.php">
                             View Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
                         </a>
                     </div>
                 </div>
 
                 <div class="mt-12 text-center">
-                    <a href="departments.html"
+                    <a href="departments.php"
                         class="inline-block bg-navy hover:bg-navy-light text-pure-white font-heading font-bold text-sm py-4 px-8 rounded-full transition-all shadow-md">
                         Explore All 17 Departments
                     </a>
@@ -740,7 +500,7 @@
                             <p class="font-sans text-xs text-on-surface-variant leading-relaxed line-clamp-2">MBBS,
                                 FCPS. Renowned urology surgeon and Head of Urology Department at Al Rasheed.</p>
                             <hr class="my-4 border-slate-100" />
-                            <a href="doctors.html"
+                            <a href="doctors.php"
                                 class="w-full text-center block border border-slate-200 text-navy py-2.5 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">View
                                 Profile</a>
                         </div>
@@ -766,7 +526,7 @@
                             <p class="font-sans text-xs text-on-surface-variant leading-relaxed line-clamp-2">MBBS, FCPS
                                 (Nephrology). Head of Nephrology and supervisor of Dialysis Unit.</p>
                             <hr class="my-4 border-slate-100" />
-                            <a href="doctors.html"
+                            <a href="doctors.php"
                                 class="w-full text-center block border border-slate-200 text-navy py-2.5 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">View
                                 Profile</a>
                         </div>
@@ -791,7 +551,7 @@
                             <p class="font-sans text-xs text-on-surface-variant leading-relaxed line-clamp-2">MBBS,
                                 FCPS. Former Gynecology Department Head, expert in high-risk obstetrics.</p>
                             <hr class="my-4 border-slate-100" />
-                            <a href="doctors.html"
+                            <a href="doctors.php"
                                 class="w-full text-center block border border-slate-200 text-navy py-2.5 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">View
                                 Profile</a>
                         </div>
@@ -816,7 +576,7 @@
                             <p class="font-sans text-xs text-on-surface-variant leading-relaxed line-clamp-2">MBBS-MS
                                 Ortho (Malaysia), Fellowship Arthroplasty, AO Certified (Switzerland).</p>
                             <hr class="my-4 border-slate-100" />
-                            <a href="doctors.html"
+                            <a href="doctors.php"
                                 class="w-full text-center block border border-slate-200 text-navy py-2.5 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">View
                                 Profile</a>
                         </div>
@@ -841,7 +601,7 @@
                             <p class="font-sans text-xs text-on-surface-variant leading-relaxed line-clamp-2">MBBS,
                                 FCPS. Associate Professor, expert in advanced minimally invasive general surgeries.</p>
                             <hr class="my-4 border-slate-100" />
-                            <a href="doctors.html"
+                            <a href="doctors.php"
                                 class="w-full text-center block border border-slate-200 text-navy py-2.5 rounded-full font-heading text-xs font-bold hover:bg-navy hover:text-pure-white hover:border-navy transition-all">View
                                 Profile</a>
                         </div>
@@ -849,7 +609,7 @@
                 </div>
 
                 <div class="mt-8 text-center">
-                    <a href="doctors.html"
+                    <a href="doctors.php"
                         class="inline-flex items-center gap-2 text-primary hover:text-primary-hover font-heading font-bold text-sm transition-all group">
                         View Entire Panel of 17 Consultants
                         <span
@@ -878,11 +638,11 @@
                         stability for dialysis patients.
                     </p>
                     <div class="flex flex-wrap justify-center gap-4">
-                        <a href="kidney-care.html"
+                        <a href="kidney-care.php"
                             class="bg-primary hover:bg-primary-hover text-pure-white px-8 py-4 rounded-full font-heading font-semibold transition-all">
                             Learn More About HDF Technology
                         </a>
-                        <a href="contact.html"
+                        <a href="contact.php"
                             class="border-2 border-white/20 hover:border-pure-white text-pure-white px-8 py-4 rounded-full font-heading font-semibold transition-all">
                             Contact Dialysis Unit
                         </a>
@@ -935,7 +695,7 @@
                 </div>
 
                 <div class="text-center mt-12">
-                    <a href="stats.html"
+                    <a href="stats.php"
                         class="inline-flex items-center gap-2 text-clinical-teal hover:text-teal-400 font-heading font-bold text-sm transition-all group">
                         View Full 2025 Performance Dashboard
                         <span
@@ -976,10 +736,10 @@
                                     <p class="font-heading font-semibold text-navy text-sm">24/7 Hotline & Emergency</p>
                                     <p class="font-sans text-xs md:text-sm text-on-surface-variant mt-0.5"><a
                                             href="tel:0992406982"
-                                            class="hover:text-primary transition-colors">0992-406982 / 83</a></p>
+                                            class="hover:text-primary transition-colors">0992-406982, 406983</a></p>
                                     <p class="font-sans text-xs md:text-sm text-on-surface-variant"><a
                                             href="tel:03177338830"
-                                            class="hover:text-primary transition-colors">0317-7338830</a> (Mobile)</p>
+                                            class="hover:text-primary transition-colors">03177338830</a> (Mobile)</p>
                                 </div>
                             </div>
                             <div class="flex items-start gap-4">
@@ -987,18 +747,18 @@
                                 <div>
                                     <p class="font-heading font-semibold text-navy text-sm">General Inquiries</p>
                                     <p class="font-sans text-xs md:text-sm text-on-surface-variant mt-0.5"><a
-                                            href="mailto:rashidhospi@gmail.com"
-                                            class="hover:text-primary transition-colors">rashidhospi@gmail.com</a></p>
+                                            href="mailto:alrasheedhospital24.7@gmail.com"
+                                            class="hover:text-primary transition-colors">alrasheedhospital24.7@gmail.com</a></p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="appointment.html"
+                            <a href="appointment.php"
                                 class="flex-1 bg-primary hover:bg-primary-hover text-pure-white text-center py-4 rounded-xl font-heading text-sm font-semibold transition-all shadow-lg shadow-red-900/10 flex items-center justify-center gap-2 active:scale-95">
                                 Book Your Visit <span class="material-symbols-outlined">calendar_month</span>
                             </a>
-                            <a href="contact.html"
+                            <a href="contact.php"
                                 class="flex-1 border border-navy text-navy text-center py-4 rounded-xl font-heading text-sm font-semibold hover:bg-navy hover:text-pure-white transition-all flex items-center justify-center gap-2">
                                 Contact Us
                             </a>
@@ -1017,102 +777,4 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-navy text-pure-white pt-16 pb-8 border-t border-white/5">
-        <div class="max-w-[1280px] mx-auto px-4 md:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12 mb-12">
-                <!-- Col 1 -->
-                <div class="lg:col-span-4">
-                    <a href="index.html" class="flex items-center gap-3 mb-6">
-                        <img src="assets/logo.jpeg" alt="Logo" class="h-10 w-10 rounded-full border border-white/20" />
-                        <div class="flex flex-col">
-                            <span class="font-heading font-extrabold text-pure-white tracking-tight leading-tight">AL
-                                RASHEED HOSPITAL</span>
-                            <span class="text-[10px] text-clinical-teal uppercase font-bold tracking-widest">Kidney
-                                Center • Abbottabad</span>
-                        </div>
-                    </a>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                        Providing specialized renal care and comprehensive medical services with a commitment to
-                        clinical excellence, patient safety, and empathy.
-                    </p>
-                    <div class="flex gap-3">
-                        <a href="#"
-                            class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-pure-white transition-all text-slate-300"
-                            title="Facebook"><span class="material-symbols-outlined text-sm">face</span></a>
-                        <a href="#"
-                            class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-pure-white transition-all text-slate-300"
-                            title="YouTube"><span class="material-symbols-outlined text-sm">video_library</span></a>
-                        <a href="#"
-                            class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-primary hover:text-pure-white transition-all text-slate-300"
-                            title="Mail"><span class="material-symbols-outlined text-sm">mail</span></a>
-                    </div>
-                </div>
-
-                <!-- Col 2 -->
-                <div class="lg:col-span-2">
-                    <h4 class="font-heading font-bold text-sm text-clinical-teal uppercase tracking-widest mb-6">Quick
-                        Links</h4>
-                    <ul class="space-y-3.5 text-slate-400 text-sm font-medium">
-                        <li><a class="hover:text-pure-white transition-colors" href="index.html">Home</a></li>
-                        <li><a class="hover:text-pure-white transition-colors" href="about.html">About Us</a></li>
-                        <li><a class="hover:text-pure-white transition-colors" href="departments.html">Departments</a>
-                        </li>
-                        <li><a class="hover:text-pure-white transition-colors" href="doctors.html">Our Doctors</a></li>
-                        <li><a class="hover:text-pure-white transition-colors" href="facilities.html">Facilities</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Col 3 -->
-                <div class="lg:col-span-3">
-                    <h4 class="font-heading font-bold text-sm text-clinical-teal uppercase tracking-widest mb-6">Key
-                        Specialties</h4>
-                    <ul class="space-y-3.5 text-slate-400 text-sm font-medium">
-                        <li><a class="hover:text-pure-white transition-colors" href="kidney-care.html">Nephrology &
-                                Dialysis</a></li>
-                        <li><a class="hover:text-pure-white transition-colors" href="departments.html">Urology
-                                Department</a></li>
-                        <li><a class="hover:text-pure-white transition-colors" href="departments.html">General
-                                Surgery</a></li>
-                        <li><a class="hover:text-pure-white transition-colors" href="facilities.html">Intensive Care
-                                Unit (ICU)</a></li>
-                        <li><a class="hover:text-pure-white transition-colors" href="compliance.html">KP Health
-                                Commission</a></li>
-                    </ul>
-                </div>
-
-                <!-- Col 4 -->
-                <div class="lg:col-span-3">
-                    <h4 class="font-heading font-bold text-sm text-clinical-teal uppercase tracking-widest mb-6">Contact
-                        Details</h4>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        Main Mansehra Road, Kala Pull, Abbottabad, Pakistan.
-                    </p>
-                    <div class="mt-4 p-4 bg-white/5 rounded-2xl border border-white/5">
-                        <p class="text-[10px] text-primary uppercase font-bold tracking-widest mb-1">24/7 Emergency
-                            Helpline</p>
-                        <p class="font-heading font-bold text-pure-white text-base"><a
-                                href="tel:03177338830">0317-7338830</a></p>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left text-xs text-slate-400">
-                <p>© 2026 Al Rasheed Hospital & Kidney Center. Licensed by HCCR (No. 01-001353/26).</p>
-                <div class="flex gap-4">
-                    <a class="hover:text-pure-white transition-colors" href="compliance.html">HCCR Compliance</a>
-                    <span class="text-white/10">|</span>
-                    <span class="text-clinical-teal font-semibold">Care with Compassion</span>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Shared JavaScript logic -->
-    <script src="script.js"></script>
-
-</body>
-
-</html>
+<?php include __DIR__ . '/include/footer.php'; ?>
