@@ -345,26 +345,60 @@ document.addEventListener("DOMContentLoaded", () => {
         "icu": ["Dr. Munawar"]
     };
 
+    const docSlugToDept = {
+        "nasir-jamil": "urology",
+        "usman-zia": "nephrology",
+        "rubina-bashir": "gynecology",
+        "sadia-irum": "gynecology",
+        "usman-shah": "orthopedics",
+        "ismail-akbar": "surgery",
+        "uzair-arif": "surgery",
+        "nadir-farid": "hepatobiliary",
+        "siddique-khan": "hepatobiliary",
+        "awais-faizi": "medicine",
+        "ghulam-mohiuddin": "pediatrics",
+        "ibrahim-mushtaq": "neurosurgery",
+        "ajmal-mehmood": "radiology",
+        "shapara-shakeel": "dermatology"
+    };
+
+    function populateDoctors(dept, selectedDoc) {
+        if (!deptSelect || !docSelect) return;
+        docSelect.innerHTML = '<option value="">Select Specialist</option>';
+
+        if (doctorsByDept[dept]) {
+            doctorsByDept[dept].forEach(doc => {
+                const opt = document.createElement("option");
+                opt.value = doc.toLowerCase().replace(/[\.\s]/g, "-");
+                opt.innerText = doc;
+                docSelect.appendChild(opt);
+            });
+        } else {
+            const opt = document.createElement("option");
+            opt.value = "duty-consultant";
+            opt.innerText = "Duty Consultant Specialist";
+            docSelect.appendChild(opt);
+        }
+
+        if (selectedDoc) {
+            docSelect.value = selectedDoc;
+        }
+    }
+
     if (deptSelect && docSelect) {
         deptSelect.addEventListener("change", () => {
-            const val = deptSelect.value;
-            docSelect.innerHTML = '<option value="">Select Specialist</option>';
-            
-            if (doctorsByDept[val]) {
-                doctorsByDept[val].forEach(doc => {
-                    const opt = document.createElement("option");
-                    opt.value = doc.toLowerCase().replace(/[\.\s]/g, "-");
-                    opt.innerText = doc;
-                    docSelect.appendChild(opt);
-                });
-            } else {
-                // Default fallback if a department has generic staff
-                const opt = document.createElement("option");
-                opt.value = "duty-consultant";
-                opt.innerText = "Duty Consultant Specialist";
-                docSelect.appendChild(opt);
-            }
+            populateDoctors(deptSelect.value);
         });
+
+        const params = new URLSearchParams(window.location.search);
+        const deptParam = params.get("dept");
+        const docParam = params.get("doc");
+        const resolvedDept = deptParam || (docParam ? docSlugToDept[docParam] : null);
+
+        if (resolvedDept) {
+            deptSelect.value = resolvedDept;
+            populateDoctors(resolvedDept, docParam || "");
+        }
     }
 
     // Modal success popup helper
